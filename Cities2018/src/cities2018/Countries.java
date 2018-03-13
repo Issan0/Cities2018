@@ -33,6 +33,7 @@ public class Countries {
         System.out.println(c.sortedCountries());
         System.out.println(c.sortedByCountries());
         System.out.println(c.sortedByCapitals());
+        
     }
 
 public Collection<String> capitals ()
