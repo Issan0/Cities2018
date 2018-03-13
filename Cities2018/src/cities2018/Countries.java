@@ -4,6 +4,7 @@ package cities2018;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 
@@ -30,6 +31,8 @@ public class Countries {
         System.out.println(c.countries());
         System.out.println(c.sortedCapitals());
         System.out.println(c.sortedCountries());
+        System.out.println(c.sortedByCountries());
+        System.out.println(c.sortedByCapitals());
     }
 
 public Collection<String> capitals ()
@@ -51,5 +54,21 @@ public Collection<String> sortedCountries()
     TreeSet set = new TreeSet();
     set.addAll(countries.keySet());
     return set;
+}
+public Map<String,String> sortedByCountries()
+{
+TreeMap map = new TreeMap();
+    map.putAll(countries);
+    return map;
+}
+public  Map<String,String> sortedByCapitals()
+{
+Map<String,String> map = new TreeMap();
+for(String key : countries.keySet())
+{
+    String value = countries.get(key);
+    map.put(value,key);
+}
+return map;
 }
 }
